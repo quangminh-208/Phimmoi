@@ -1,0 +1,23 @@
+#header {
+    .dropdown-menu {
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    }
+
+    .header-main {
+        padding: 16px 0;
+        background-color: #12131c;
+        background-image: linear-gradient(to bottom right, #12131c, #3d3d3e);
+    }
+
+    .header-menu {
+        padding: 4px 0;
+        background-color: #434856;
+
+        .nav-item {
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+}
