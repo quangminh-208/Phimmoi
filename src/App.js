@@ -1,8 +1,12 @@
-import BaseHeader from "./components/BaseHeader"
+import BaseHeader from "./components/BaseHeader";
+import MoviesList from "./components/MoviesList";
 
 function App() {
   return (
-    <BaseHeader/>
+    <>
+      <BaseHeader />
+      <MoviesList listTitle="Phim Anime hay"/>
+    </>
   );
 }
 

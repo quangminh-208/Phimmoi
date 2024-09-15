@@ -1,3 +1,7 @@
+@import './root.scss';
+@import './variables.scss';
+
+
 #header {
     .dropdown-menu {
         .dropdown:hover .dropdown-menu {
@@ -18,6 +22,60 @@
         .nav-item {
             color: #fff;
             font-weight: bold;
+        }
+    }
+}
+
+.movie_list-wrapper {
+    .movie_list {
+        .movie_item {
+            gap: 40px;
+
+            a {
+                background-color: $black-2;
+                box-shadow: 0px 8px 24px rgb(59, 63, 67);
+            }
+
+            .movie-thumbnail {
+                width: 100%;
+                aspect-ratio: 3/5;
+                display: flex;
+
+
+                .movie-thumbnail_img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .movie-title_wrapper {
+                padding: 8px;
+
+                .movie-title {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: normal;
+                    -webkit-line-clamp: 1;
+                    line-height: 1.5rem;
+                    margin: 0; 
+                    color: $gray;
+
+                    &.movie-main_title {
+                        margin-bottom: 6px;
+                        font-weight: bold;
+                        color: $title-color;
+                    }
+
+                    &.movie-sub_title {
+                        font-size: .9rem;
+                    }
+                }
+            }
         }
     }
 }
