@@ -6,22 +6,37 @@
     box-sizing: border-box;
 }
 
-body {
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    line-height: 1.6rem;
     font-family: $font-family-base;
+    box-sizing: border-box ;
+}
+
+body {
+    font-size: $font-size-md;
     background-color: $background-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $font-family-heading;
 }
 
-ul {
+ul,
+li,
+p {
     margin: 0;
     padding: 0;
+}
 
+ul {
     li {
         list-style: none;
-        margin: 0;
     }
 }
 

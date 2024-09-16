@@ -16,6 +16,7 @@
     }
 
     .header-menu {
+        font-size: $font-size-base;
         padding: 4px 0;
         background-color: #434856;
 
@@ -26,9 +27,16 @@
     }
 }
 
-.movie_list-wrapper {
-    .movie_list {
-        .movie_item {
+.movie-list-wrapper {
+    .movie-list-title {
+        h1 {
+            font-weight: $font-weight-semibold;
+            color: $title-color-2;
+        }
+    }
+
+    .movie-list {
+        .movie-item {
             gap: 40px;
 
             a {
@@ -38,20 +46,17 @@
 
             .movie-thumbnail {
                 width: 100%;
-                aspect-ratio: 3/5;
-                display: flex;
+                aspect-ratio: 3/4;
 
-
-                .movie-thumbnail_img {
+                .movie-thumbnail-img {
                     display: block;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    object-position: center;
                 }
             }
 
-            .movie-title_wrapper {
+            .movie-title-wrapper {
                 padding: 8px;
 
                 .movie-title {
@@ -62,17 +67,79 @@
                     white-space: normal;
                     -webkit-line-clamp: 1;
                     line-height: 1.5rem;
-                    margin: 0; 
                     color: $gray;
 
-                    &.movie-main_title {
-                        margin-bottom: 6px;
+                    &.movie-main-title {
+                        margin-bottom: 14px;
                         font-weight: bold;
                         color: $title-color;
                     }
 
-                    &.movie-sub_title {
-                        font-size: .9rem;
+                    &.movie-sub-title {
+                        font-size: $font-size-sm;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.top-movie-list {
+    .top-movie-list-title {
+        h1 {
+            font-weight: $font-weight-semibold;
+            color: $title-color-2;
+        }
+    }
+
+    .movie-list {
+        background-color: $black-3;
+
+        .movie-item-wrapper {
+            .movie-list-title {
+                color: $title-color-2;
+            }
+
+            .movie-item {
+                background-color: $black-3;
+                padding: 10px 0;
+
+                .movie-thumbnail {
+                    width: 80px;
+                    aspect-ratio: 9/10;
+
+                    .movie-thumbnail-img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .movie-info {
+                    font-size: $font-size-sm;
+                    color: $text-color-2;
+
+                    .movie-main-title {
+                        font-weight: bold;
+                        font-size: $font-size-md;
+                        color: $text-color;
+                    }
+
+                    .movie-sub-title {}
+
+                    .movie-views {}
+
+                    .movie-rating-stars {}
+
+                }
+
+                .movie-status {
+                    span {
+                        padding: 4px;
+                        font-size: $font-size-sm;
+                        background-color: $black-4;
+                        color: $text-color;
                     }
                 }
             }

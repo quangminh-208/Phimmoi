@@ -1,13 +1,11 @@
-import BaseHeader from "./components/BaseHeader";
-import MoviesList from "./components/MoviesList";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  return (
-    <>
-      <BaseHeader />
-      <MoviesList listTitle="Phim Anime hay"/>
-    </>
-  );
+    return (
+        <>
+            <HomePage />
+        </>
+    );
 }
 
 export default App;
