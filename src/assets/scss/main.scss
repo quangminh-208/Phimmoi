@@ -27,6 +27,20 @@
     }
 }
 
+.banner {
+    background-color: $light-sky-blue;
+    border-radius: $border-radius-md;
+
+    .banner-content {
+        margin: 0;
+        color: $text-color;
+
+        .banner-link {
+            color: $primary-color;
+        }
+    }
+}
+
 .movie-list-wrapper {
     .movie-list-title {
         h1 {
@@ -101,7 +115,6 @@
             }
 
             .movie-item {
-                background-color: $black-3;
                 padding: 10px 0;
 
                 .movie-thumbnail {
@@ -130,7 +143,11 @@
 
                     .movie-views {}
 
-                    .movie-rating-stars {}
+                    .movie-rating-stars {
+                        display: inline-block;
+                        margin-top: auto;
+                    }
+
 
                 }
 
@@ -140,9 +157,28 @@
                         font-size: $font-size-sm;
                         background-color: $black-4;
                         color: $text-color;
+                        box-shadow: $box-shadow;
                     }
                 }
+
+            }
+
+            &:nth-child(odd) {
+                background-color: $black-3;
+            }
+
+            &:nth-child(even) {
+                background: $background-color-2;
             }
         }
     }
+}
+
+.star {
+    font-size: 1.6rem;
+    color: lightgray;
+}
+
+.star.filled {
+    color: gold;
 }

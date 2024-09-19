@@ -21,6 +21,7 @@ function TopMovieList(props) {
     useEffect(() => {
         const fetchData = async (url) => {
             const data = await getMoviesData(url);
+            data[0].rate = 5;
             setMovies(data);
         };
 
@@ -40,13 +41,13 @@ function TopMovieList(props) {
                                 <div className="col-3 movie-thumbnail">
                                     <img src={movie.image} alt={movie.title} className="movie-thumbnail-img" />
                                 </div>
-                                <div className="col movie-info">
+                                <div className="col movie-info ">
                                     <p className="movie-main-title">{movie.vnTitle}</p>
                                     <p className="movie-sub-title">{movie.enTitle}</p>
                                     <p className="movie-views">{movie.views} lượt xem</p>
                                     {renderStars(movie.rate)}
                                 </div>
-                                <div className="col-3 movie-status">
+                                <div className="col-3 movie-status my-auto">
                                     <span>{movie.status}</span>
                                 </div>
                             </a>
