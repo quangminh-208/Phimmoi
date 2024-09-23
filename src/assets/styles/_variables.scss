@@ -13,8 +13,16 @@ $black-2: #1C1C1C;
 $black-3: #131313;
 $black-4: #333333;
 $gray: #CCCCCC;
-$gray-2: #696969; 
+$gray-2: #696969;
+$yellow-2: #F9ED69; 
 $light-sky-blue: #87cefa;
+
+$transparent-black-05: rgba(0, 0, 0, 0.5);
+$transparent-black-025: rgba(0, 0, 0, 0.25);
+$transparent-white: rgba(255, 255, 255, 0.5);
+$transparent-gray: rgba(128, 128, 128, 0.5);
+$transparent-red: rgba(255, 0, 0, 0.5);
+$transparent-blue: rgba(0, 0, 255, 0.5);
 
 $background-color: $secondary-color;
 $background-color-2: $dark-color;
@@ -22,8 +30,6 @@ $title-color: $info-color;
 $title-color-2: $warning-color;
 $text-color: $white-color;
 $text-color-2: $gray-2;
-
-
 
 // Typography
 $font-family-base: 'Roboto', sans-serif;
@@ -46,12 +52,15 @@ $spacer-xl: 3.2rem; // 32px
 // Borders
 $border-width: 1px;
 $border-color: #dee2e6;
-$border-radius: 0.4rem; // 4px
-$border-radius-md: 0.4rem; // 4px
+$border-radius: 0.6rem; // 6px
+$border-radius-sm: 0.4rem; // 4px
+$border-radius-md: 0.8rem; // 8px
+$border-radius-lg: 1rem; // 10px
+$border-radius-xl: 2rem; // 20px
 
 // Shadows
-$box-shadow-sm: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.075);
 $box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+$box-shadow-sm: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.075);
 $box-shadow-lg: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
 
 // Breakpoints

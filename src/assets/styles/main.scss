@@ -1,5 +1,5 @@
-@import './root.scss';
-@import './variables.scss';
+@import './root';
+@import './variables';
 
 
 #header {
@@ -27,9 +27,15 @@
     }
 }
 
+#footer {
+    background-color: $background-color-2;
+    border-top: 4px solid $yellow-2;
+    color: $text-color;        
+}
+
 .banner {
     background-color: $light-sky-blue;
-    border-radius: $border-radius-md;
+    border-radius: $border-radius-lg;
 
     .banner-content {
         margin: 0;
@@ -40,12 +46,20 @@
         }
     }
 }
-
+  
 .movie-list-wrapper {
     .movie-list-title {
         h1 {
             font-weight: $font-weight-semibold;
             color: $title-color-2;
+        }
+
+        .movie-list-all-btn {
+            color: $text-color;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -84,7 +98,7 @@
                     color: $gray;
 
                     &.movie-main-title {
-                        margin-bottom: 14px;
+                        margin-bottom: 12px;
                         font-weight: bold;
                         color: $title-color;
                     }
@@ -103,6 +117,11 @@
         h1 {
             font-weight: $font-weight-semibold;
             color: $title-color-2;
+        }
+
+        a {
+            display: inline-block;
+
         }
     }
 
@@ -129,35 +148,33 @@
                     }
                 }
 
-                .movie-info {
-                    font-size: $font-size-sm;
-                    color: $text-color-2;
+                .movie-info-wrapper {
 
-                    .movie-main-title {
-                        font-weight: bold;
-                        font-size: $font-size-md;
-                        color: $text-color;
-                    }
-
-                    .movie-sub-title {}
-
-                    .movie-views {}
-
-                    .movie-rating-stars {
-                        display: inline-block;
-                        margin-top: auto;
-                    }
-
-
-                }
-
-                .movie-status {
-                    span {
-                        padding: 4px;
+                    .movie-info {
                         font-size: $font-size-sm;
-                        background-color: $black-4;
-                        color: $text-color;
-                        box-shadow: $box-shadow;
+                        color: $text-color-2;
+
+                        .movie-main-title {
+                            font-weight: bold;
+                            font-size: $font-size-md;
+                            color: $text-color;
+                        }
+
+                        .movie-rating-stars {
+                            display: inline-block;
+                            margin-top: auto;
+                        }
+                    }
+
+                    .movie-status {
+                        span {
+                            padding: 4px;
+                            font-size: $font-size-sm;
+                            background-color: $black-4;
+                            color: $text-color;
+                            text-wrap: nowrap;
+                            box-shadow: $box-shadow;
+                        }
                     }
                 }
 
@@ -169,6 +186,35 @@
 
             &:nth-child(even) {
                 background: $background-color-2;
+            }
+        }
+
+        .first-movie {
+            .movie-item {
+                position: relative;
+
+                .movie-thumbnail {
+                    width: 100%;
+                    aspect-ratio: 10/4;
+                }
+
+                .movie-info-wrapper {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 0;
+                    right: 0;
+                    padding: 6px 16px;
+                    background-color: $transparent-black-05;
+
+                    .movie-info {
+
+                        .movie-sub-title,
+                        .movie-views,
+                        .movie-rating-stars {
+                            display: none;
+                        }
+                    }
+                }
             }
         }
     }

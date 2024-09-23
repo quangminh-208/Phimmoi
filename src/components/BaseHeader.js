@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function BaseHeader() {
     const categories = [
@@ -60,6 +60,10 @@ export default function BaseHeader() {
         "Ả Rập Xê Út",
     ];
 
+    const [searchText, setSearchText] = useState("");
+
+    console.log("🚀 ~ BaseHeader:", searchText);
+
     return (
         <>
             <div id="header">
@@ -78,7 +82,13 @@ export default function BaseHeader() {
                             </div>
                             <div className="header-search-form col-4">
                                 <form method="GET" id="form-search">
-                                    <input className="w-100" type="text" placeholder="Tìm kiếm..." />
+                                    <input
+                                        className="w-100"
+                                        type="text"
+                                        placeholder="Tìm kiếm..."
+                                        value={searchText}
+                                        onChange={(e) => setSearchText(e.target.value)}
+                                    />
                                 </form>
                             </div>
                             <div className="col-4"></div>
