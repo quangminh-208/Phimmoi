@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BASE_URL, MOVIES_LIMIT } from "../constants.js";
-import { getMoviesData } from "../services/movieAPI.js";
+import { getMovies } from "../services/movieService";
 
 const RatingStars = (props) => {
     const stars = [];
@@ -20,18 +19,23 @@ function TopMovieList(props) {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        const fetchData = async (url) => {
-            const data = await getMoviesData(url);
+        const fetchData = async (params) => {
+            const data = await getMovies(params);
             console.log("🚀 ~ fetchData ~ data:", data);
             setMovies(data);
         };
 
-        fetchData(`${BASE_URL}/api/movies?page=1&limit=6&order=view:desc&filters[type]=hoathinh`);
+        fetchData({
+            page: 1,
+            limit: 6,
+            order: "view:desc",
+            "filters[type]": props.categori
+        });
     }, []);
 
     return (
         <>
-            <div className="top-movie-list">
+            <div className="top-movie-list mb-5">
                 <div className="row mb-3 top-movie-list-title">
                     <h1 className="col-12">
                         <FontAwesomeIcon icon="fa-solid fa-star" className="me-3" />

@@ -1,65 +1,8 @@
 import React, { useState } from "react";
+import categories from "../config/categories.json";
+import countries from "../config/countries.json";
 
 export default function BaseHeader() {
-    const categories = [
-        "Hành Động",
-        "Phiêu Lưu",
-        "Hài",
-        "Kinh Dị",
-        "Tình Cảm",
-        "Khoa Học Viễn Tưởng",
-        "Giả Tưởng",
-        "Tài Liệu",
-        "Âm Nhạc",
-        "Gia Đình",
-        "Lịch Sử",
-        "Chính Trị",
-        "Tội Phạm",
-        "Thần Thoại",
-        "Chính Kịch",
-    ];
-
-    const countries = [
-        "Toàn bộ Quốc gia",
-        "Quốc Gia Khác",
-        "Thái Lan",
-        "Ấn Độ",
-        "Hà Lan",
-        "Ba Lan",
-        "Âu Mỹ",
-        "Anh",
-        "Đức",
-        "Trung Quốc",
-        "Xem tất cả",
-        "TOF",
-        "Brazil",
-        "Đan Mạch",
-        "Châu Phi",
-        "Indonesia",
-        "Úc",
-        "Philippines",
-        "UAE",
-        "Nam Phi",
-        "Hàn Quốc",
-        "Đài Loan",
-        "Pháp",
-        "Tây Ban Nha",
-        "Nga",
-        "Thụy Điển",
-        "Bồ Đào Nha",
-        "Na Uy",
-        "Ukraina",
-        "Nhật Bản",
-        "Hồng Kông",
-        "Canada",
-        "Thổ Nhĩ Kỳ",
-        "Mexico",
-        "Malaysia",
-        "Ý",
-        "Thụy Sĩ",
-        "Ả Rập Xê Út",
-    ];
-
     const [searchText, setSearchText] = useState("");
 
     console.log("🚀 ~ BaseHeader:", searchText);
@@ -104,10 +47,10 @@ export default function BaseHeader() {
                                     Thể loại
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    {categories.map((category, index) => (
-                                        <li key={index}>
+                                    {categories.map(category => (
+                                        <li key={category.id}>
                                             <a className="dropdown-item" href="/">
-                                                {category}
+                                                {category.name}
                                             </a>
                                         </li>
                                     ))}
@@ -118,10 +61,10 @@ export default function BaseHeader() {
                                     Quốc gia
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    {countries.map((country, index) => (
-                                        <li key={index}>
+                                    {countries.map(country => (
+                                        <li key={country.id}>
                                             <a className="dropdown-item" href="/">
-                                                {country}
+                                                {country.name}
                                             </a>
                                         </li>
                                     ))}

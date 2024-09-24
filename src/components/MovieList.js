@@ -1,23 +1,26 @@
 import { React, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BASE_URL, MOVIES_LIMIT } from "../constants.js";
-import { getMoviesData } from "../services/movieAPI.js";
+import { getMovies } from "../services/movieService";
 
 function MovieList(props) {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        const fetchData = async (url) => {
-            const data = await getMoviesData(url);
+        const fetchData = async (params) => {
+            const data = await getMovies(params);
             setMovies(data);
         };
 
-        fetchData(`${BASE_URL}/api/movies?page=1&limit=${MOVIES_LIMIT}&order=view:desc`);
+        fetchData({
+            page: 1, 
+            limit:12,
+            order: "view:desc"
+        });
     }, []);
 
     return (
         <>
-            <div className="movie-list-wrapper">
+            <div className="movie-list-wrapper mb-5">
                 <div className="row mb-3 movie-list-title">
                     <div className="col">
                         <h1>{props.title}</h1>
@@ -32,7 +35,7 @@ function MovieList(props) {
                 <ul className="row movie-list row-gap-4">
                     {movies.map((movie, index) => (
                         <li key={index} className="col-3 movie-item">
-                            <a href="#" title={movie.title} className="d-flex flex-column">
+                            <a href="" title={movie.title} className="d-flex flex-column">
                                 <div className="movie-thumbnail">
                                     <img src={movie.image} className="movie-thumbnail-img" alt={movie.title} />
                                 </div>

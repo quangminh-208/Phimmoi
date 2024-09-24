@@ -1,0 +1,339 @@
+[
+    {
+      "id": "1",
+      "name": "Hành Động",
+      "description": "Các bộ phim hành động gay cấn.",
+      "slug": "hanh-dong",
+      "icon": "/assets/icons/action.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Hành Động",
+          "description": "Các bộ phim hành động gay cấn."
+        },
+        "en": {
+          "name": "Action",
+          "description": "Exciting action-packed films."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Phiêu Lưu",
+      "description": "Phim phiêu lưu khám phá những vùng đất mới.",
+      "slug": "phieu-luu",
+      "icon": "/assets/icons/adventure.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Phiêu Lưu",
+          "description": "Phim phiêu lưu khám phá những vùng đất mới."
+        },
+        "en": {
+          "name": "Adventure",
+          "description": "Adventure films exploring new lands."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Hài",
+      "description": "Phim hài mang lại tiếng cười và niềm vui.",
+      "slug": "hai",
+      "icon": "/assets/icons/comedy.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Hài",
+          "description": "Phim hài mang lại tiếng cười và niềm vui."
+        },
+        "en": {
+          "name": "Comedy",
+          "description": "Comedy films bringing laughter and joy."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Kinh Dị",
+      "description": "Phim kinh dị đáng sợ và hồi hộp.",
+      "slug": "kinh-di",
+      "icon": "/assets/icons/horror.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Kinh Dị",
+          "description": "Phim kinh dị đáng sợ và hồi hộp."
+        },
+        "en": {
+          "name": "Horror",
+          "description": "Scary and suspenseful horror films."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Tình Cảm",
+      "description": "Phim tình cảm lãng mạn và cảm động.",
+      "slug": "tinh-cam",
+      "icon": "/assets/icons/romance.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Tình Cảm",
+          "description": "Phim tình cảm lãng mạn và cảm động."
+        },
+        "en": {
+          "name": "Romance",
+          "description": "Romantic and touching films."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "6",
+      "name": "Khoa Học Viễn Tưởng",
+      "description": "Phim khoa học viễn tưởng về tương lai và công nghệ.",
+      "slug": "khoa-hoc-vien-tuong",
+      "icon": "/assets/icons/scifi.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Khoa Học Viễn Tưởng",
+          "description": "Phim khoa học viễn tưởng về tương lai và công nghệ."
+        },
+        "en": {
+          "name": "Science Fiction",
+          "description": "Science fiction films about the future and technology."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "7",
+      "name": "Giả Tưởng",
+      "description": "Phim giả tưởng với các yếu tố siêu nhiên.",
+      "slug": "gia-tuong",
+      "icon": "/assets/icons/fantasy.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Giả Tưởng",
+          "description": "Phim giả tưởng với các yếu tố siêu nhiên."
+        },
+        "en": {
+          "name": "Fantasy",
+          "description": "Fantasy films with supernatural elements."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "8",
+      "name": "Tài Liệu",
+      "description": "Phim tài liệu về sự kiện có thật.",
+      "slug": "tai-lieu",
+      "icon": "/assets/icons/documentary.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Tài Liệu",
+          "description": "Phim tài liệu về sự kiện có thật."
+        },
+        "en": {
+          "name": "Documentary",
+          "description": "Documentaries about real events."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "9",
+      "name": "Âm Nhạc",
+      "description": "Phim về âm nhạc và nghệ thuật biểu diễn.",
+      "slug": "am-nhac",
+      "icon": "/assets/icons/music.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Âm Nhạc",
+          "description": "Phim về âm nhạc và nghệ thuật biểu diễn."
+        },
+        "en": {
+          "name": "Music",
+          "description": "Films about music and performing arts."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "10",
+      "name": "Gia Đình",
+      "description": "Phim phù hợp cho cả gia đình.",
+      "slug": "gia-dinh",
+      "icon": "/assets/icons/family.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Gia Đình",
+          "description": "Phim phù hợp cho cả gia đình."
+        },
+        "en": {
+          "name": "Family",
+          "description": "Family-friendly films."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "11",
+      "name": "Lịch Sử",
+      "description": "Phim tái hiện lịch sử và các sự kiện quan trọng.",
+      "slug": "lich-su",
+      "icon": "/assets/icons/history.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Lịch Sử",
+          "description": "Phim tái hiện lịch sử và các sự kiện quan trọng."
+        },
+        "en": {
+          "name": "History",
+          "description": "Historical films about important events."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "12",
+      "name": "Chính Trị",
+      "description": "Phim về các vấn đề chính trị.",
+      "slug": "chinh-tri",
+      "icon": "/assets/icons/politics.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Chính Trị",
+          "description": "Phim về các vấn đề chính trị."
+        },
+        "en": {
+          "name": "Political",
+          "description": "Films about political issues."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "13",
+      "name": "Tội Phạm",
+      "description": "Phim về tội phạm và các vụ án.",
+      "slug": "toi-pham",
+      "icon": "/assets/icons/crime.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Tội Phạm",
+          "description": "Phim về tội phạm và các vụ án."
+        },
+        "en": {
+          "name": "Crime",
+          "description": "Crime films and investigations."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "14",
+      "name": "Thần Thoại",
+      "description": "Phim về các truyền thuyết và thần thoại.",
+      "slug": "than-thoai",
+      "icon": "/assets/icons/myth.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Thần Thoại",
+          "description": "Phim về các truyền thuyết và thần thoại."
+        },
+        "en": {
+          "name": "Mythology",
+          "description": "Films about legends and mythology."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "15",
+      "name": "Chính Kịch",
+      "description": "Phim chính kịch với nội dung sâu sắc.",
+      "slug": "chinh-kich",
+      "icon": "/assets/icons/drama.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Chính Kịch",
+          "description": "Phim chính kịch với nội dung sâu sắc."
+        },
+        "en": {
+          "name": "Drama",
+          "description": "Drama films with profound stories."
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+      "id": "16",
+      "name": "Anime",
+      "description": "Phim anime, hoạt hình hay nhất",
+      "slug": "hoat-hinh",
+      "icon": "/assets/icons/anime.png",
+      "is_active": true,
+      "translations": {
+        "vi": {
+          "name": "Hoạt hình",
+          "description": "Phim anime, hoạt hình hay nhất"
+        },
+        "en": {
+          "name": "Anime",
+          "description": "The best animes are here"
+        }
+      },
+      "parent_id": null,
+      "created_at": "2024-09-23T12:00:00Z",
+      "updated_at": "2024-09-23T12:00:00Z"
+    }
+]
+  

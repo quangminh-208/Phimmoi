@@ -1,0 +1,478 @@
+[
+    {
+        "id": "ALL",
+        "name": "Toàn bộ Quốc gia",
+        "code": "ALL",
+        "flag": "/assets/flags/all-countries.png",
+        "region": "Global",
+        "translations": {
+            "vi": "Toàn bộ Quốc gia",
+            "en": "All Countries"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "OTH",
+        "name": "Quốc Gia Khác",
+        "code": "OTH",
+        "flag": "/assets/flags/other-countries.png",
+        "region": "Global",
+        "translations": {
+            "vi": "Quốc Gia Khác",
+            "en": "Other Countries"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "TH",
+        "name": "Thái Lan",
+        "code": "TH",
+        "flag": "/assets/flags/thailand.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Thái Lan",
+            "en": "Thailand"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "IN",
+        "name": "Ấn Độ",
+        "code": "IN",
+        "flag": "/assets/flags/india.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Ấn Độ",
+            "en": "India"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "NL",
+        "name": "Hà Lan",
+        "code": "NL",
+        "flag": "/assets/flags/netherlands.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Hà Lan",
+            "en": "Netherlands"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "PL",
+        "name": "Ba Lan",
+        "code": "PL",
+        "flag": "/assets/flags/poland.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Ba Lan",
+            "en": "Poland"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "US",
+        "name": "Âu Mỹ",
+        "code": "US",
+        "flag": "/assets/flags/united-states.png",
+        "region": "North America",
+        "translations": {
+            "vi": "Âu Mỹ",
+            "en": "USA"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "GB",
+        "name": "Anh",
+        "code": "GB",
+        "flag": "/assets/flags/united-kingdom.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Anh",
+            "en": "United Kingdom"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "DE",
+        "name": "Đức",
+        "code": "DE",
+        "flag": "/assets/flags/germany.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Đức",
+            "en": "Germany"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "CN",
+        "name": "Trung Quốc",
+        "code": "CN",
+        "flag": "/assets/flags/china.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Trung Quốc",
+            "en": "China"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "ALL-2",
+        "name": "Xem tất cả",
+        "code": "ALL-2",
+        "flag": "/assets/flags/view-all.png",
+        "region": "Global",
+        "translations": {
+            "vi": "Xem tất cả",
+            "en": "View All"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "TOF",
+        "name": "TOF",
+        "code": "TOF",
+        "flag": "/assets/flags/tof.png",
+        "region": "Unknown",
+        "translations": {
+            "vi": "TOF",
+            "en": "TOF"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "BR",
+        "name": "Brazil",
+        "code": "BR",
+        "flag": "/assets/flags/brazil.png",
+        "region": "South America",
+        "translations": {
+            "vi": "Brazil",
+            "en": "Brazil"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "DK",
+        "name": "Đan Mạch",
+        "code": "DK",
+        "flag": "/assets/flags/denmark.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Đan Mạch",
+            "en": "Denmark"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "AF",
+        "name": "Châu Phi",
+        "code": "AF",
+        "flag": "/assets/flags/africa.png",
+        "region": "Africa",
+        "translations": {
+            "vi": "Châu Phi",
+            "en": "Africa"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "ID",
+        "name": "Indonesia",
+        "code": "ID",
+        "flag": "/assets/flags/indonesia.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Indonesia",
+            "en": "Indonesia"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "AU",
+        "name": "Úc",
+        "code": "AU",
+        "flag": "/assets/flags/australia.png",
+        "region": "Oceania",
+        "translations": {
+            "vi": "Úc",
+            "en": "Australia"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "TW",
+        "name": "Đài Loan",
+        "code": "TW",
+        "flag": "/assets/flags/taiwan.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Đài Loan",
+            "en": "Taiwan"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "FR",
+        "name": "Pháp",
+        "code": "FR",
+        "flag": "/assets/flags/france.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Pháp",
+            "en": "France"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "ES",
+        "name": "Tây Ban Nha",
+        "code": "ES",
+        "flag": "/assets/flags/spain.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Tây Ban Nha",
+            "en": "Spain"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "RU",
+        "name": "Nga",
+        "code": "RU",
+        "flag": "/assets/flags/russia.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Nga",
+            "en": "Russia"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "SE",
+        "name": "Thụy Điển",
+        "code": "SE",
+        "flag": "/assets/flags/sweden.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Thụy Điển",
+            "en": "Sweden"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "PT",
+        "name": "Bồ Đào Nha",
+        "code": "PT",
+        "flag": "/assets/flags/portugal.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Bồ Đào Nha",
+            "en": "Portugal"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "NO",
+        "name": "Na Uy",
+        "code": "NO",
+        "flag": "/assets/flags/norway.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Na Uy",
+            "en": "Norway"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "UA",
+        "name": "Ukraina",
+        "code": "UA",
+        "flag": "/assets/flags/ukraine.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Ukraina",
+            "en": "Ukraine"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "JP",
+        "name": "Nhật Bản",
+        "code": "JP",
+        "flag": "/assets/flags/japan.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Nhật Bản",
+            "en": "Japan"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "HK",
+        "name": "Hồng Kông",
+        "code": "HK",
+        "flag": "/assets/flags/hong-kong.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Hồng Kông",
+            "en": "Hong Kong"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "CA",
+        "name": "Canada",
+        "code": "CA",
+        "flag": "/assets/flags/canada.png",
+        "region": "North America",
+        "translations": {
+            "vi": "Canada",
+            "en": "Canada"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "TR",
+        "name": "Thổ Nhĩ Kỳ",
+        "code": "TR",
+        "flag": "/assets/flags/turkey.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Thổ Nhĩ Kỳ",
+            "en": "Turkey"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "MX",
+        "name": "Mexico",
+        "code": "MX",
+        "flag": "/assets/flags/mexico.png",
+        "region": "North America",
+        "translations": {
+            "vi": "Mexico",
+            "en": "Mexico"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "MY",
+        "name": "Malaysia",
+        "code": "MY",
+        "flag": "/assets/flags/malaysia.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Malaysia",
+            "en": "Malaysia"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "IT",
+        "name": "Ý",
+        "code": "IT",
+        "flag": "/assets/flags/italy.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Ý",
+            "en": "Italy"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "CH",
+        "name": "Thụy Sĩ",
+        "code": "CH",
+        "flag": "/assets/flags/switzerland.png",
+        "region": "Europe",
+        "translations": {
+            "vi": "Thụy Sĩ",
+            "en": "Switzerland"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    },
+    {
+        "id": "SA",
+        "name": "Ả Rập Xê Út",
+        "code": "SA",
+        "flag": "/assets/flags/saudi-arabia.png",
+        "region": "Asia",
+        "translations": {
+            "vi": "Ả Rập Xê Út",
+            "en": "Saudi Arabia"
+        },
+        "is_active": true,
+        "created_at": "2024-09-23T12:00:00Z",
+        "updated_at": "2024-09-23T12:00:00Z"
+    }
+]
