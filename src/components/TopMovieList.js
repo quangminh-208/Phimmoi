@@ -29,7 +29,7 @@ function TopMovieList(props) {
             page: 1,
             limit: 6,
             order: "view:desc",
-            "filters[type]": props.categori
+            "filters[type]": props.category
         });
     }, []);
 

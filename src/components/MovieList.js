@@ -12,9 +12,10 @@ function MovieList(props) {
         };
 
         fetchData({
-            page: 1, 
-            limit:12,
-            order: "view:desc"
+            page: props.params.page, 
+            limit: props.params.limit,
+            order: props.params.order,
+            category: props.params.category
         });
     }, []);
 

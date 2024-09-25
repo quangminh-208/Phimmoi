@@ -13,6 +13,17 @@
         padding: 16px 0;
         background-color: #12131c;
         background-image: linear-gradient(to bottom right, #12131c, #3d3d3e);
+
+        .search-box {
+            padding: 4px 10px;
+            border: none;
+            border-radius: $border-radius;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 12px 4px rgba(255, 253, 230, 0.2);
+            }
+        }
     }
 
     .header-menu {
@@ -31,6 +42,20 @@
     background-color: $background-color-2;
     border-top: 4px solid $yellow-2;
     color: $text-color;        
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: $transparent-black-025;
+    border-radius: 50%;
+
+    &:hover {
+        background-color: $light-sky-blue;
+    }
 }
 
 .banner {
@@ -75,6 +100,7 @@
             .movie-thumbnail {
                 width: 100%;
                 aspect-ratio: 3/4;
+                overflow: hidden;
 
                 .movie-thumbnail-img {
                     display: block;
