@@ -14,14 +14,59 @@
         background-color: #12131c;
         background-image: linear-gradient(to bottom right, #12131c, #3d3d3e);
 
-        .search-box {
-            padding: 4px 10px;
-            border: none;
-            border-radius: $border-radius;
+        .header-search-form {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-            &:focus {
-                outline: none;
-                box-shadow: 0 0 12px 4px rgba(255, 253, 230, 0.2);
+            #form-search-movie {
+                width: 100%;
+
+                .search-box {
+                    padding: 4px 10px;
+                    border: none;
+                    border-radius: $border-radius;
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: 0 0 12px 4px rgba(255, 253, 230, 0.2);
+                    }
+                }
+            }
+
+            .header-search-result {
+                position: absolute;
+                top: 35px;
+                background-color: #272727;
+                width: 100%;
+                max-height: 400px;
+                z-index: $zindex-modal;
+                overflow-x: hidden;
+                /* Hide scrollbar for IE, Edge and Firefox */
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .search-result-item {
+                    padding: 6px 10px;
+                    border-bottom: 1px solid $transparent-gray;
+
+                    .search-movie {
+                        color: $text-color;
+
+                        .movie-main-title {}
+
+                        .movie-sub-title {
+                            color: $text-color-2;
+                            margin-left: 5px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -41,7 +86,7 @@
 #footer {
     background-color: $background-color-2;
     border-top: 4px solid $yellow-2;
-    color: $text-color;        
+    color: $text-color;
 }
 
 .back-to-top {
@@ -50,7 +95,9 @@
     right: 30px;
     width: 50px;
     height: 50px;
+    color: $text-color;
     background-color: $transparent-black-025;
+    border: none;
     border-radius: 50%;
 
     &:hover {
@@ -71,7 +118,7 @@
         }
     }
 }
-  
+
 .movie-list-wrapper {
     .movie-list-title {
         h1 {

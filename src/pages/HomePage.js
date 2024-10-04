@@ -17,9 +17,9 @@ function HomePage() {
             <div className="container my-5">
                 <div className="row">
                     <div className="col-8">
-                        <MovieList title="Phim lẻ ra mắt" category="" params={{ page: 1, limit: 12, order: "modified:desc" }} />
-                        <MovieList title="Phim hoạt hình ra mắt" category="hoathinh" params={{ page: 1, limit: 12, order: "modified:desc" }} />
-                        <MovieList title="Phim bộ ra mắt" category="" params={{ page: 1, limit: 12, order: "modified:desc" }} />
+                        <MovieList title="Phim lẻ ra mắt" category="" params={{ limit: 12, order: "modified:desc" }} />
+                        <MovieList title="Phim hoạt hình ra mắt" category="hoathinh" params={{ limit: 12, order: "modified:desc" }} />
+                        <MovieList title="Phim bộ ra mắt" category="" params={{ limit: 12, order: "modified:desc" }} />
                     </div>
                     <div className="col ps-5">
                         <TopMovieList title="Top Anime hay" category="hoathinh" />

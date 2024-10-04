@@ -21,12 +21,10 @@ function TopMovieList(props) {
     useEffect(() => {
         const fetchData = async (params) => {
             const data = await getMovies(params);
-            console.log("🚀 ~ fetchData ~ data:", data);
             setMovies(data);
         };
 
         fetchData({
-            page: 1,
             limit: 6,
             order: "view:desc",
             "filters[type]": props.category

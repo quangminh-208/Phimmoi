@@ -12,7 +12,7 @@ export const getMovies = async (params = {}) => {
 
 export const searchMovies = async (text) => {
     try {
-        const response = await api.get(`/api/search${text}`);
+        const response = await api.get(`/api/movies/search/${text}`);
         return await response.data;
     } catch (error) {
         console.error("Error searching movies:", error);

@@ -7,11 +7,11 @@ function Banner() {
                 <h4 className="banner-content text-center">
                     Truy cập & bookmark{" "}
                     <a className="banner-link" href="https://t.me/+F3x2od36D7NjMDZl">
-                        @vietsubfhd
-                    </a>
-                    {" "}để theo dõi trang Phim mới nhất nhé. Telegram support:{" "}
+                        <strong>@vietsubfhd</strong>
+                    </a>{" "}
+                    để theo dõi trang Phim mới nhất nhé. Telegram support:{" "}
                     <a className="banner-link" href="https://t.me/+F3x2od36D7NjMDZl">
-                        @VietsubFHD
+                        <strong>@VietsubFHD</strong>
                     </a>
                 </h4>
             </div>
