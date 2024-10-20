@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import BaseHeader from "./components/BaseHeader";
+import Banner from "./components/Banner";
+import BaseFooter from "../components/BaseFooter";
 
 function MovieCategoryPage() {
-  return (
-    <>
-        
-    </>
-  )
+    return (
+        <>
+            <BaseHeader />
+            <Banner />
+            <BaseFooter />
+        </>
+    );
 }
 
-export default MovieCategoryPage
+export default MovieCategoryPage;

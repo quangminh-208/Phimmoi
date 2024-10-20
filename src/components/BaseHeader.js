@@ -1,4 +1,5 @@
 import { React, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import categories from "../config/categories.json";
 import countries from "../config/countries.json";
 import { searchMovies } from "../services/movieService";
@@ -44,14 +45,13 @@ export default function BaseHeader() {
                     <div className="container ">
                         <div className="row d-flex justify-content-between">
                             <div className="header-logo col-4">
-                                <a
+                                <Link to="/"
                                     aria-current="page"
                                     className="navbar-brand"
-                                    href="/"
                                     title="Vietsub | Phim Hay | Xem Phim HD Online Vietsub Miễn Phí"
                                 >
                                     <img src="https://vietsubmoi.online/_ipx/f_webp/image/logo.png" alt="Vietsubmoi" width="80" height="40" />
-                                </a>
+                                </Link>
                             </div>
                             <div className="header-search-form col-4">
                                 <form method="GET" id="form-search-movie">
@@ -68,10 +68,10 @@ export default function BaseHeader() {
                                     <ul ref={searchResultBox} className="header-search-result">
                                         {movies.map((movie) => (
                                             <li key={movie.id} className="search-result-item">
-                                                <a href="" className="search-movie">
+                                                <Link to="/" className="search-movie">
                                                     <span className="movie-main-title">{movie.vnTitle} </span>
                                                     <span className="movie-sub-title">{movie.enTitle}</span>
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -86,47 +86,47 @@ export default function BaseHeader() {
                     <div className="container">
                         <ul className="navbar-nav d-flex flex-row justify-content-around">
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="/" data-bs-toggle="dropdown">
+                                <Link to="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                     Thể loại
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {categories.map((category) => (
                                         <li key={category.id}>
-                                            <a className="dropdown-item" href="/">
+                                            <Link to="/" className="dropdown-item"
                                                 {category.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="/" data-bs-toggle="dropdown">
+                                <Link to="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                     Quốc gia
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {countries.map((country) => (
                                         <li key={country.id}>
-                                            <a className="dropdown-item" href="/">
+                                            <Link to="/" className="dropdown-item"
                                                 {country.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">
+                                <Link to="/" className="nav-link"
                                     Anime
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">
+                                <Link to="/" className="nav-link"
                                     Phim mới nhất
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">
+                                <Link to="/" className="nav-link"
                                     Phim mới nhất
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
