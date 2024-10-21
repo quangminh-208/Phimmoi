@@ -5,15 +5,15 @@ import { getMovies } from "../services/movieService";
 
 function MovieList(props) {
     const [movies, setMovies] = useState([]);
-    
+
     useEffect(() => {
         const fetchData = async (params) => {
             const data = await getMovies(params);
-            setMovies(data.data);
+            setMovies(data);
         };
-        
+
         fetchData(props.params);
-    }, []);
+    }, [props.params]);
 
     return (
         <>

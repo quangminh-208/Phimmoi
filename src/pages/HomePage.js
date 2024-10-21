@@ -22,9 +22,9 @@ function HomePage() {
                         <MovieList title="Phim bộ ra mắt" params={{ limit: 12, order: "modified:desc" }} />
                     </div>
                     <div className="col ps-5">  
-                        <TopMovieList title="Top Anime hay" params={{ limit: 6, order: "views:desc", "filters[type]": "hoathinh" }} />
-                        <TopMovieList title="Top phim lẻ" params={{ limit: 6, order: "views:desc" }} />
-                        <TopMovieList title="Top phim bộ" params={{ limit: 6, order: "views:desc" }} />
+                        <TopMovieList title="Top Anime hay" params={{ limit: 6, order: "view:desc", "filters[type]": "hoathinh" }} />
+                        <TopMovieList title="Top phim lẻ" params={{ limit: 6, order: "view:desc" }} />
+                        <TopMovieList title="Top phim bộ" params={{ limit: 6, order: "view:desc" }} />
                     </div>
                 </div>
             </div>

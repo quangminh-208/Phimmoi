@@ -45,7 +45,8 @@ export default function BaseHeader() {
                     <div className="container ">
                         <div className="row d-flex justify-content-between">
                             <div className="header-logo col-4">
-                                <Link to="/"
+                                <Link
+                                    to="/"
                                     aria-current="page"
                                     className="navbar-brand"
                                     title="Vietsub | Phim Hay | Xem Phim HD Online Vietsub Miễn Phí"
@@ -86,13 +87,13 @@ export default function BaseHeader() {
                     <div className="container">
                         <ul className="navbar-nav d-flex flex-row justify-content-around">
                             <li className="nav-item dropdown">
-                                <Link to="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                     Thể loại
-                                </Link>
+                                </span>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {categories.map((category) => (
                                         <li key={category.id}>
-                                            <Link to="/" className="dropdown-item">
+                                            <Link to={`/category/${category.slug}`} className="dropdown-item">
                                                 {category.name}
                                             </Link>
                                         </li>
