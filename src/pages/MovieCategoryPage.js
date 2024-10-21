@@ -1,6 +1,6 @@
 import React from "react";
-import BaseHeader from "./components/BaseHeader";
-import Banner from "./components/Banner";
+import BaseHeader from "../components/BaseHeader";
+import Banner from "../components/Banner";
 import BaseFooter from "../components/BaseFooter";
 
 function MovieCategoryPage() {

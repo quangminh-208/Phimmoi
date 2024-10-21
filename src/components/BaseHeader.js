@@ -92,7 +92,7 @@ export default function BaseHeader() {
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {categories.map((category) => (
                                         <li key={category.id}>
-                                            <Link to="/" className="dropdown-item"
+                                            <Link to="/" className="dropdown-item">
                                                 {category.name}
                                             </Link>
                                         </li>
@@ -106,7 +106,7 @@ export default function BaseHeader() {
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {countries.map((country) => (
                                         <li key={country.id}>
-                                            <Link to="/" className="dropdown-item"
+                                            <Link to="/" className="dropdown-item">
                                                 {country.name}
                                             </Link>
                                         </li>
@@ -114,17 +114,17 @@ export default function BaseHeader() {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link to="/" className="nav-link"
+                                <Link to="/" className="nav-link">
                                     Anime
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/" className="nav-link"
+                                <Link to="/" className="nav-link">
                                     Phim mới nhất
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/" className="nav-link"
+                                <Link to="/" className="nav-link">
                                     Phim mới nhất
                                 </Link>
                             </li>
