@@ -43,9 +43,9 @@
     },
     {
       "id": "3",
-      "name": "Hài",
+      "name": "Hài hước",
       "description": "Phim hài mang lại tiếng cười và niềm vui.",
-      "slug": "hai",
+      "slug": "hai-huoc",
       "icon": "/assets/icons/comedy.png",
       "is_active": true,
       "translations": {

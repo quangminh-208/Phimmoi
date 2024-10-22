@@ -9,7 +9,7 @@ import TopMovieList from "../components/TopMovieList";
 import Pagination from "../components/Pagination";
 
 function MovieListPage() {
-    const { catgoryName } = useParams();
+    const { categoryName } = useParams();
     const [totalPage, setTotalPage] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
     
@@ -25,9 +25,9 @@ function MovieListPage() {
 
         getTotalPage({
             limit: 0,
-            "filter[category]": catgoryName,
+            "filter[category]": categoryName,
         });
-    }, [catgoryName]);
+    }, [categoryName]);
 
     return (
         <>
@@ -38,9 +38,9 @@ function MovieListPage() {
                     <div className="col-8">
                         <MovieList
                             title="Danh sách phim "
-                            params={{ page: { pageNumber }, limit: 20, order: "modified:desc", "filter[category]": { catgoryName } }}
+                            params={{ page: pageNumber, limit: 20, order: "modified:desc", "filters[category.slug]": categoryName  }}
                         />
-                        {totalPage && <Pagination currentPage={pageNumber} totalPages={totalPage} onPageChange={(page) => handlePageChange(page)} />}
+                        {totalPage > 0 && <Pagination currentPage={pageNumber} totalPages={totalPage} onPageChange={(page) => handlePageChange(page)} />}
                     </div>
                     <div className="col ps-5">
                         <TopMovieList title="Top Anime hay" params={{ limit: 6, order: "view:desc", "filters[type]": "hoathinh" }} />
