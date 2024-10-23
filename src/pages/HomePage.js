@@ -43,12 +43,13 @@ function HomePage() {
             });
         } catch (error) {
             console.error("Error fetching movies:", error);
-        }
+        } finally {
+            setIsLoading(false);
+        };
     }, []);
 
     useEffect(() => {
         fetchData();
-        setIsLoading(false);
     }, []);
 
     return (

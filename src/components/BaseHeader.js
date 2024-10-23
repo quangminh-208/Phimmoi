@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import categories from "../config/categories.json";
 import countries from "../config/countries.json";
 import { searchMovies } from "../services/movieService";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function BaseHeader() {
     const [movies, setMovies] = useState([]);
@@ -19,7 +20,6 @@ export default function BaseHeader() {
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            // Clean up the event listener
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
@@ -51,7 +51,8 @@ export default function BaseHeader() {
                                     className="navbar-brand"
                                     title="Vietsub | Phim Hay | Xem Phim HD Online Vietsub Miễn Phí"
                                 >
-                                    <img src="https://vietsubmoi.online/_ipx/f_webp/image/logo.png" alt="Vietsubmoi" width="80" height="40" />
+                                    {/* <img src="https://vietsubmoi.online/_ipx/f_webp/image/logo.png" alt="Vietsubmoi" width="80" height="40" /> */}
+                                    <FontAwesomeIcon icon="fa-solid fa-film" className="fs-1 text-white text-center"/>
                                 </Link>
                             </div>
                             <div className="header-search-form col-4">

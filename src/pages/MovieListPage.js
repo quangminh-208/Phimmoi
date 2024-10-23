@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { React, useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { getTotalMovies } from "../services/movieService";
+import { getMovies } from "../services/movieService";
 import BaseHeader from "../components/BaseHeader";
 import Banner from "../components/Banner";
 import BaseFooter from "../components/BaseFooter";
@@ -11,52 +12,90 @@ import LoadingLayer from "../components/LoadingLayer";
 
 function MovieListPage() {
     const { categoryName } = useParams();
-    const [totalPage, setTotalPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
-    const [loading, setLoading] = useState(true);
-
+    const [isLoading, setIsLoading] = useState(true);
+    const [movies, setMovies] = useState({
+        totalMovies: 0,
+        filterMovies: [],
+        topSingleMovies: [],
+        topAnimeMovies: [],
+        topSeriesMovies: [],
+    });
     const handlePageChange = (page) => {
         setPageNumber(page);
     };
 
-    useEffect(() => {
-        const getTotalPage = async (params) => {
-            const totalItems = await getTotalMovies(params);
+    const fetchData = useCallback(async () => {
+        try {
+            const [totalMoviesData, topSingleMoviesData, topAnimeMoviesData, topSeriesMoviesData] = await Promise.all([
+                getTotalMovies({ limit: 0, "filters[category.slug]": categoryName }),
+                getMovies({ limit: 6, order: "view:desc", "filters[type]": "single" }),
+                getMovies({ limit: 6, order: "view:desc", "filters[type]": "hoathinh" }),
+                getMovies({ limit: 6, order: "view:desc", "filters[type]": "series" }),
+            ]);
 
-            setTotalPage(Math.ceil(totalItems / 20));
-        };
+            setMovies({
+                totalMovies: totalMoviesData,
+                topSingleMovies: topSingleMoviesData,
+                topAnimeMovies: topAnimeMoviesData,
+                topSeriesMovies: topSeriesMoviesData,
+            });
 
-        getTotalPage({
-            limit: 0,
-            "filter[category]": categoryName,
-        });
+            setTotalPages(Math.ceil(movies.totalMovies / 20));
+        } catch (error) {
+            console.error("Error fetching movies:", error);
+        } finally {
+            setIsLoading(false);
+        }
     }, [categoryName]);
+
+    const fetchMoviesPerPage = useCallback(async () => {
+        try {
+            const [filterMoviesData] = await Promise.all([
+                getMovies({ page: pageNumber, limit: 20, order: "modified:desc", "filters[category.slug]": categoryName }),
+            ]);
+
+            setMovies({ ...movies, filterMovies: filterMoviesData });
+        } catch (error) {
+            console.error("Error fetching movies :", error);
+        } finally {
+            setIsLoading(false);
+        }
+    }, [categoryName, pageNumber]);
+
+    useEffect(() => {
+        fetchData();
+    }, [categoryName, fetchData]);
+
+    useEffect(() => {
+        fetchMoviesPerPage();
+    }, [pageNumber, fetchMoviesPerPage]);
 
     return (
         <>
             <BaseHeader />
             <Banner />
-            <div className="container my-5">
-                <div className="row">
-                    <div className="col-8">
-                        <MovieList
-                            title="Danh sách phim "
-                            params={{ page: pageNumber, limit: 20, order: "modified:desc", "filters[category.slug]": categoryName }}
-                        />
-                        {totalPage > 0 && (
-                            <Pagination currentPage={pageNumber} totalPages={totalPage} onPageChange={(page) => handlePageChange(page)} />
-                        )}
-                    </div>
-                    <div className="col ps-5">
-                        <TopMovieList title="Top Anime hay" params={{ limit: 6, order: "view:desc", "filters[type]": "hoathinh" }} />
-                        <TopMovieList title="Top phim lẻ" params={{ limit: 6, order: "views:desc" }} />
-                        <TopMovieList title="Top phim bộ" params={{ limit: 6, order: "views:desc" }} />
+            {isLoading ? (
+                <LoadingLayer />
+            ) : (
+                <div className="container my-5">
+                    <div className="row">
+                        <div className="col-8">
+                            <MovieList title="Danh sách phim " data={movies.filterMovies} />
+                            {totalPages > 0 && (
+                                <Pagination currentPage={pageNumber} totalPages={totalPages} onPageChange={(page) => handlePageChange(page)} />
+                            )}
+                        </div>
+                        <div className="col ps-5">
+                            <TopMovieList title="Top Anime hay" data={movies.topAnimeMovies} />
+                            <TopMovieList title="Top phim lẻ" data={movies.topSingleMovies} />
+                            <TopMovieList title="Top phim bộ" data={movies.topSeriesMovies} />
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            )}
             <BaseFooter />
-            {/* <LoadingLayer /> */}
         </>
     );
 }
