@@ -4,25 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getMovies } from "../services/movieService";
 import RatingStars from "./RatingStar";
 
-function TopMovieList(props) {
-    const [movies, setMovies] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async (params) => {
-            const data = await getMovies(params);
-            setMovies(data);
-        };
-
-        fetchData(props.params);
-    }, [props.params]);
-
+function TopMovieList({ data: movies, title}) {
     return (
         <>
             <div className="top-movie-list mb-5">
                 <div className="row mb-3 top-movie-list-title">
                     <h1 className="col-12">
                         <FontAwesomeIcon icon="fa-solid fa-star" className="me-3" />
-                        {props.title}
+                        {title}
                     </h1>
                 </div>
                 <ul className="row movie-list">

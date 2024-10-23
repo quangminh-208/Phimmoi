@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     const handlePageChange = (page) => {
@@ -17,14 +18,14 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             if (i > 0) pagesShow.push(i);
         }
         setPages(pagesShow);
-    }, [currentPage]);
+    }, [currentPage, totalPages]);
 
     return (
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mt-5">
             <ul className="pagination">
                 <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
                     <Link className="page-link" onClick={() => handlePageChange(currentPage - 1)}>
-                        Previous
+                        <FontAwesomeIcon icon="fa-solid fa-circle-left" />
                     </Link>
                 </li>
                 {pages.map((page) => (
@@ -36,7 +37,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 ))}
                 <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
                     <Link className="page-link" onClick={() => handlePageChange(currentPage + 1)}>
-                        Next
+                        <FontAwesomeIcon icon="fa-solid fa-circle-right" />
                     </Link>
                 </li>
             </ul>

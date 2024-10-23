@@ -3,24 +3,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getMovies } from "../services/movieService";
 
-function MovieList(props) {
-    const [movies, setMovies] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async (params) => {
-            const data = await getMovies(params);
-            setMovies(data);
-        };
-
-        fetchData(props.params);
-    }, [props.params]);
-
+function MovieList({ data: movies, title }) {
     return (
         <>
             <div className="movie-list-wrapper mb-5">
                 <div className="row mb-3 movie-list-title">
                     <div className="col">
-                        <h1>{props.title}</h1>
+                        <h1>{title}</h1>
                     </div>
                     <div className="col d-flex">
                         <Link to="/" className="my-auto ms-auto movie-list-all-btn">
