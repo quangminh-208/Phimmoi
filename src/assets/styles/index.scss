@@ -182,6 +182,27 @@
     }
 }
 
+.movie-placeholder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+
+    .movie-thumbnail {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .movie-title-wrapper {
+        position: sticky;
+        bottom: 0;
+        padding: 90px 8px 8px 8px;
+        background-image: linear-gradient(transparent, #00172b 90%);
+    }
+}
+
 .movie-list-wrapper {
     .movie-list-title {
         h1 {
@@ -207,12 +228,12 @@
                 box-shadow: 0px 8px 24px rgb(59, 63, 67);
             }
 
-            .movie-thumbnail {
+            .movie {
                 width: 100%;
                 aspect-ratio: 3/4;
                 overflow: hidden;
 
-                .movie-thumbnail-img {
+                .movie-thumbnail {
                     display: block;
                     width: 100%;
                     height: 100%;

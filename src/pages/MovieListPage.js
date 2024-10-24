@@ -15,9 +15,8 @@ function MovieListPage() {
     const [totalPages, setTotalPages] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
-    const [movies, setMovies] = useState({
-        totalMovies: 0,
-        filterMovies: [],
+    const [movies, setMovies] = useState([]);
+    const [topMovies, setTopMovies] = useState({
         topSingleMovies: [],
         topAnimeMovies: [],
         topSeriesMovies: [],
@@ -26,51 +25,49 @@ function MovieListPage() {
         setPageNumber(page);
     };
 
-    const fetchData = useCallback(async () => {
+    const fetchTopMovies = useCallback(async () => {
         try {
-            const [totalMoviesData, topSingleMoviesData, topAnimeMoviesData, topSeriesMoviesData] = await Promise.all([
-                getTotalMovies({ limit: 0, "filters[category.slug]": categoryName }),
+            const [topSingleMoviesData, topAnimeMoviesData, topSeriesMoviesData] = await Promise.all([
                 getMovies({ limit: 6, order: "view:desc", "filters[type]": "single" }),
                 getMovies({ limit: 6, order: "view:desc", "filters[type]": "hoathinh" }),
                 getMovies({ limit: 6, order: "view:desc", "filters[type]": "series" }),
             ]);
 
-            setMovies({
-                totalMovies: totalMoviesData,
+            setTopMovies({
                 topSingleMovies: topSingleMoviesData,
                 topAnimeMovies: topAnimeMoviesData,
                 topSeriesMovies: topSeriesMoviesData,
             });
-
-            setTotalPages(Math.ceil(movies.totalMovies / 20));
         } catch (error) {
             console.error("Error fetching movies:", error);
-        } finally {
-            setIsLoading(false);
         }
+    }, []);
+
+    const getTotalPages = useCallback(async () => {
+        const totalMovies = await getTotalMovies({ limit: 0, "filters[category.slug]": categoryName });
+
+        setTotalPages(Math.ceil(totalMovies / 20));
     }, [categoryName]);
 
-    const fetchMoviesPerPage = useCallback(async () => {
+    const fetchMovies = useCallback(async () => {
         try {
-            const [filterMoviesData] = await Promise.all([
-                getMovies({ page: pageNumber, limit: 20, order: "modified:desc", "filters[category.slug]": categoryName }),
-            ]);
+            const movieList = await getMovies({ page: pageNumber, limit: 20, order: "modified:desc", "filters[category.slug]": categoryName });
 
-            setMovies({ ...movies, filterMovies: filterMoviesData });
+            setMovies(movieList);
         } catch (error) {
             console.error("Error fetching movies :", error);
-        } finally {
-            setIsLoading(false);
         }
     }, [categoryName, pageNumber]);
 
     useEffect(() => {
-        fetchData();
-    }, [categoryName, fetchData]);
+        fetchTopMovies();
+    }, [fetchTopMovies]);
 
     useEffect(() => {
-        fetchMoviesPerPage();
-    }, [pageNumber, fetchMoviesPerPage]);
+        fetchMovies();
+        getTotalPages();
+        setIsLoading(false);
+    }, [pageNumber, categoryName, getTotalPages, fetchMovies]);
 
     return (
         <>
@@ -82,15 +79,15 @@ function MovieListPage() {
                 <div className="container my-5">
                     <div className="row">
                         <div className="col-8">
-                            <MovieList title="Danh sách phim " data={movies.filterMovies} />
+                            <MovieList title="Danh sách phim " data={movies} />
                             {totalPages > 0 && (
                                 <Pagination currentPage={pageNumber} totalPages={totalPages} onPageChange={(page) => handlePageChange(page)} />
                             )}
                         </div>
                         <div className="col ps-5">
-                            <TopMovieList title="Top Anime hay" data={movies.topAnimeMovies} />
-                            <TopMovieList title="Top phim lẻ" data={movies.topSingleMovies} />
-                            <TopMovieList title="Top phim bộ" data={movies.topSeriesMovies} />
+                            <TopMovieList title="Top Anime hay" data={topMovies.topAnimeMovies} />
+                            <TopMovieList title="Top phim lẻ" data={topMovies.topSingleMovies} />
+                            <TopMovieList title="Top phim bộ" data={topMovies.topSeriesMovies} />
                         </div>
                     </div>
                 </div>

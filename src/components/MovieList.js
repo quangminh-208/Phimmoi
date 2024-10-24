@@ -22,8 +22,8 @@ function MovieList({ data: movies, title }) {
                         movies.map((movie, index) => (
                             <li key={index} className="col-3 movie-item">
                                 <Link to="/" title={movie.title} className="d-flex flex-column">
-                                    <div className="movie-thumbnail">
-                                        <img src={movie.image} className="movie-thumbnail-img" alt={movie.title} />
+                                    <div className="movie">
+                                        <img src={movie.image} className="movie-thumbnail" alt={movie.title} />
                                         <div className="movie-title-wrapper">
                                             <p className="movie-title movie-main-title">{movie.vnTitle}</p>
                                             <p className="movie-title movie-sub-title">{movie.enTitle}</p>
