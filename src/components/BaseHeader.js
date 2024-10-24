@@ -122,12 +122,12 @@ export default function BaseHeader() {
                             </li>
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">
-                                    Phim mới nhất
+                                    Phim lẻ mới nhất
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">
-                                    Phim mới nhất
+                                    Phim bộ mới nhất
                                 </Link>
                             </li>
                         </ul>

@@ -8,7 +8,7 @@ function LoadingLayer() {
                     <svg className="spinner" viewBox="0 0 50 50">
                         <circle className="path" cx="25" cy="25" r="20" fill="none" strokeWidth="8"></circle>
                     </svg>
-                    <h1 className="text-white border-light mt-5">Loading...</h1>
+                    <h1 className="text-white fw-bold mt-5">Loading...</h1>
                 </div>
             </div>
         </>

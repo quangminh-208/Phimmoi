@@ -115,7 +115,7 @@
 }
 
 .loading-layer {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -179,27 +179,6 @@
         .banner-link {
             color: $primary-color;
         }
-    }
-}
-
-.movie-placeholder {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3/4;
-    overflow: hidden;
-
-    .movie-thumbnail {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .movie-title-wrapper {
-        position: sticky;
-        bottom: 0;
-        padding: 90px 8px 8px 8px;
-        background-image: linear-gradient(transparent, #00172b 90%);
     }
 }
 

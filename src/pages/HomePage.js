@@ -56,38 +56,20 @@ function HomePage() {
         <>
             <BaseHeader />
             <Banner />
-
-            <>
-                <div className="container my-5">
-                    <div className="row">
-                        <div className="col-8">
-                            <div className="col-3 movie-placeholder" aria-hidden="true">
-                                <div className="movie">
-                                    <img src="https://critics.io/img/movies/poster-placeholder.png" className="placeholder" alt="Movie loading..." />
-                                    <div className="movie-title-wrapper placeholder-glow">
-                                        <p className="placeholder col-9"></p>
-                                        <p className="placeholder col-6"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {!isLoading && (
-                            <>
-                                <div className="col-8">
-                                    <MovieList title="Phim lẻ ra mắt" data={movies.singleMovies} />
-                                    <MovieList title="Phim hoạt hình ra mắt" data={movies.animeMovies} />
-                                    <MovieList title="Phim bộ mới ra mắt" data={movies.seriesMovies} />
-                                </div>
-                                <div className="col ps-5">
-                                    <TopMovieList title="Top Anime hay" data={movies.topSingleMovies} />
-                                    <TopMovieList title="Top phim lẻ" data={movies.topAnimeMovies} />
-                                    <TopMovieList title="Top phim bộ" data={movies.topSeriesMovies} />
-                                </div>
-                            </>
-                        )}
+            <div className="container my-5">
+                <div className="row">
+                    <div className="col-8">
+                        <MovieList title="Phim lẻ ra mắt" data={movies.singleMovies} isLoading={isLoading} />
+                        <MovieList title="Phim hoạt hình ra mắt" data={movies.animeMovies} isLoading={isLoading} />
+                        <MovieList title="Phim bộ mới ra mắt" data={movies.seriesMovies} isLoading={isLoading} />
+                    </div>
+                    <div className="col ps-5">
+                        <TopMovieList title="Top Anime hay" data={movies.topAnimeMovies} isLoading={isLoading} />
+                        <TopMovieList title="Top phim lẻ" data={movies.topSingleMovies} isLoading={isLoading} />
+                        <TopMovieList title="Top phim bộ" data={movies.topSeriesMovies} isLoading={isLoading} />
                     </div>
                 </div>
-            </>
+            </div>
             <BaseFooter />
             <BackToTop />
             {isLoading && <LoadingLayer />}

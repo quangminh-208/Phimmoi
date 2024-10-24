@@ -51,11 +51,13 @@ function MovieListPage() {
 
     const fetchMovies = useCallback(async () => {
         try {
-            const movieList = await getMovies({ page: pageNumber, limit: 20, order: "modified:desc", "filters[category.slug]": categoryName });
+            const movieList = await getMovies({ page: pageNumber, limit: 32, order: "modified:desc", "filters[category.slug]": categoryName });
 
             setMovies(movieList);
         } catch (error) {
             console.error("Error fetching movies :", error);
+        } finally {
+            setIsLoading(false);
         }
     }, [categoryName, pageNumber]);
 
@@ -64,35 +66,34 @@ function MovieListPage() {
     }, [fetchTopMovies]);
 
     useEffect(() => {
-        fetchMovies();
         getTotalPages();
-        setIsLoading(false);
-    }, [pageNumber, categoryName, getTotalPages, fetchMovies]);
+    }, [categoryName, getTotalPages]);
+
+    useEffect(() => {
+        fetchMovies();
+    }, [pageNumber, categoryName, fetchMovies]);
 
     return (
         <>
             <BaseHeader />
             <Banner />
-            {isLoading ? (
-                <LoadingLayer />
-            ) : (
-                <div className="container my-5">
-                    <div className="row">
-                        <div className="col-8">
-                            <MovieList title="Danh sách phim " data={movies} />
-                            {totalPages > 0 && (
-                                <Pagination currentPage={pageNumber} totalPages={totalPages} onPageChange={(page) => handlePageChange(page)} />
-                            )}
-                        </div>
-                        <div className="col ps-5">
-                            <TopMovieList title="Top Anime hay" data={topMovies.topAnimeMovies} />
-                            <TopMovieList title="Top phim lẻ" data={topMovies.topSingleMovies} />
-                            <TopMovieList title="Top phim bộ" data={topMovies.topSeriesMovies} />
-                        </div>
+            <div className="container my-5">
+                <div className="row">
+                    <div className="col-8">
+                        <MovieList title="Danh sách phim " data={movies} isLoading={isLoading} />
+                        {totalPages > 0 && (
+                            <Pagination currentPage={pageNumber} totalPages={totalPages} onPageChange={(page) => handlePageChange(page)} />
+                        )}
+                    </div>
+                    <div className="col ps-5">
+                        <TopMovieList title="Top Anime hay" data={topMovies.topAnimeMovies} isLoading={isLoading} />
+                        <TopMovieList title="Top phim lẻ" data={topMovies.topSingleMovies} isLoading={isLoading} />
+                        <TopMovieList title="Top phim bộ" data={topMovies.topSeriesMovies} isLoading={isLoading} />
                     </div>
                 </div>
-            )}
+            </div>
             <BaseFooter />
+            {isLoading && <LoadingLayer />}
         </>
     );
 }

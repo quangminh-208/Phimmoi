@@ -2,7 +2,7 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function MovieList({ data: movies, title }) {
+function MovieList({ data: movies, title, isLoading }) {
     return (
         <>
             <div className="movie-list-wrapper mb-5">
@@ -18,20 +18,42 @@ function MovieList({ data: movies, title }) {
                     </div>
                 </div>
                 <ul className="row movie-list row-gap-4">
-                    {movies &&
-                        movies.map((movie, index) => (
-                            <li key={index} className="col-3 movie-item">
-                                <Link to="/" title={movie.title} className="d-flex flex-column">
+                    {isLoading ? (
+                        <>
+                            {Array.from({ length: 16 }).map((_, index) => (
+                                <div key={index} className="col-3 movie-item movie-placeholder" aria-hidden="true">
                                     <div className="movie">
-                                        <img src={movie.image} className="movie-thumbnail" alt={movie.title} />
-                                        <div className="movie-title-wrapper">
-                                            <p className="movie-title movie-main-title">{movie.vnTitle}</p>
-                                            <p className="movie-title movie-sub-title">{movie.enTitle}</p>
+                                        <img
+                                            src="https://critics.io/img/movies/poster-placeholder.png"
+                                            className="placeholder movie-thumbnail"
+                                            alt="Movie loading..."
+                                        />
+                                        <div className="movie-title-wrapper placeholder-glow">
+                                            <p className="placeholder col-11 bg-light"></p>
+                                            <p className="placeholder col-8 bg-secondary"></p>
                                         </div>
                                     </div>
-                                </Link>
-                            </li>
-                        ))}
+                                </div>
+                            ))}
+                        </>
+                    ) : (
+                        <>
+                            {movies &&
+                                movies.map((movie, index) => (
+                                    <li key={index} className="col-3 movie-item">
+                                        <Link to="/" title={movie.title} className="d-flex flex-column">
+                                            <div className="movie">
+                                                <img src={movie.image} className="movie-thumbnail" alt={movie.title} />
+                                                <div className="movie-title-wrapper">
+                                                    <p className="movie-title movie-main-title">{movie.vnTitle}</p>
+                                                    <p className="movie-title movie-sub-title">{movie.enTitle}</p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </li>
+                                ))}
+                        </>
+                    )}
                 </ul>
             </div>
         </>

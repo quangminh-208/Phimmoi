@@ -8,6 +8,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/category/:categoryName" element={<MovieListPage />} />
+                <Route path="/type/:typeName" element={<MovieListPage />} />
             </Routes>
         </>
     );
