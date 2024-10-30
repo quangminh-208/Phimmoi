@@ -50,9 +50,9 @@ function MovieListPage() {
     }, [categoryName]);
 
     const fetchMovies = useCallback(async () => {
+        setIsLoading(true);
         try {
             const movieList = await getMovies({ page: pageNumber, limit: 32, order: "modified:desc", "filters[category.slug]": categoryName });
-
             setMovies(movieList);
         } catch (error) {
             console.error("Error fetching movies :", error);

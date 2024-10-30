@@ -1,6 +1,7 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LazyLoadImage from "./LazyLoadImage";
 
 function MovieList({ data: movies, title, isLoading }) {
     return (
@@ -18,9 +19,9 @@ function MovieList({ data: movies, title, isLoading }) {
                     </div>
                 </div>
                 <ul className="row movie-list row-gap-4">
-                    {isLoading ? (
+                    {/* {isLoading ? (
                         <>
-                            {Array.from({ length: 16 }).map((_, index) => (
+                            {Array.from({ length: movies.length }).map((_, index) => (
                                 <div key={index} className="col-3 movie-item movie-placeholder" aria-hidden="true">
                                     <div className="movie">
                                         <img
@@ -36,14 +37,15 @@ function MovieList({ data: movies, title, isLoading }) {
                                 </div>
                             ))}
                         </>
-                    ) : (
+                    ) : ( */}
                         <>
                             {movies &&
                                 movies.map((movie, index) => (
                                     <li key={index} className="col-3 movie-item">
                                         <Link to="/" title={movie.title} className="d-flex flex-column">
                                             <div className="movie">
-                                                <img src={movie.image} className="movie-thumbnail" alt={movie.title} />
+                                                <LazyLoadImage src={movie.image} className="movie-thumbnail" alt={movie.title}/>
+                                                {/* <img src={movie.image} className="movie-thumbnail" alt={movie.title} /> */}
                                                 <div className="movie-title-wrapper">
                                                     <p className="movie-title movie-main-title">{movie.vnTitle}</p>
                                                     <p className="movie-title movie-sub-title">{movie.enTitle}</p>
@@ -53,7 +55,7 @@ function MovieList({ data: movies, title, isLoading }) {
                                     </li>
                                 ))}
                         </>
-                    )}
+                    {/* )} */}
                 </ul>
             </div>
         </>

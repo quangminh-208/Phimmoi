@@ -1,7 +1,8 @@
-import { React } from "react";
+import { React, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RatingStars from "./RatingStar";
+import LazyLoadImage from "./LazyLoadImage";
 
 function TopMovieList({ data: movies, title, isLoading }) {
     return (
@@ -16,7 +17,7 @@ function TopMovieList({ data: movies, title, isLoading }) {
                 <ul className="row movie-list">
                     {isLoading ? (
                         <>
-                            {Array.from({ length: 6 }).map((_, index) => (
+                            {Array.from({ length: movies.length }).map((_, index) => (
                                 <li key={index} className={`col-12 movie-item-wrapper ${index === 0 ? "first-movie" : ""}`}>
                                     <Link to="/" className="row movie-item">
                                         <div className="col-3 movie-thumbnail">
@@ -46,7 +47,7 @@ function TopMovieList({ data: movies, title, isLoading }) {
                                     <li key={index} className={`col-12 movie-item-wrapper ${index === 0 ? "first-movie" : ""}`}>
                                         <Link to="/" className="row movie-item">
                                             <div className="col-3 movie-thumbnail">
-                                                <img src={movie.image} alt={movie.title} className="movie-thumbnail-img" />
+                                                <LazyLoadImage src={movie.image} alt={movie.title} className="movie-thumbnail-img" />
                                             </div>
                                             <div className="col d-flex movie-info-wrapper">
                                                 <div className="movie-info">

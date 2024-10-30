@@ -25,17 +25,20 @@ export default function BaseHeader() {
     }, []);
 
     useEffect(() => {
-        const searchMovie = async (searchText) => {
+        const searchMovieName = async (searchText) => {
+            console.log("🚀 ~ searchMovieName ~ searchText:", searchText)
             if (searchText === "") {
                 setIsShowSearchResult(false);
                 return;
             }
             setIsShowSearchResult(true);
             const data = await searchMovies(searchText);
+            console.log("🚀 ~ searchMovie ~ data:", data)
+            
             setMovies(data);
         };
 
-        searchMovie(searchText);
+        searchMovieName(searchText);
     }, [searchText]);
 
     return (
@@ -68,7 +71,7 @@ export default function BaseHeader() {
                                 </form>
                                 {isShowSearchResult && (
                                     <ul ref={searchResultBox} className="header-search-result">
-                                        {movies.map((movie) => (
+                                        {movies && movies.map((movie) => (
                                             <li key={movie.id} className="search-result-item">
                                                 <Link to="/" className="search-movie">
                                                     <span className="movie-main-title">{movie.vnTitle} </span>
