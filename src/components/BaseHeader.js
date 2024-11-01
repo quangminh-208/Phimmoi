@@ -1,9 +1,9 @@
-import { React, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import {React, useEffect, useRef, useState} from "react";
+import {Link} from "react-router-dom";
 import categories from "../config/categories.json";
 import countries from "../config/countries.json";
-import { searchMovies } from "../services/movieService";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {searchMovies} from "../services/movieService";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function BaseHeader() {
     const [movies, setMovies] = useState([]);
@@ -47,7 +47,7 @@ export default function BaseHeader() {
                 <div className="header-main">
                     <div className="container ">
                         <div className="row d-flex justify-content-between">
-                            <div className="header-logo col-4">
+                            <div className="header-logo col-4 d-flex align-items-center">
                                 <Link
                                     to="/"
                                     aria-current="page"
@@ -55,11 +55,13 @@ export default function BaseHeader() {
                                     title="Vietsub | Phim Hay | Xem Phim HD Online Vietsub Miễn Phí"
                                 >
                                     {/* <img src="https://vietsubmoi.online/_ipx/f_webp/image/logo.png" alt="Vietsubmoi" width="80" height="40" /> */}
-                                    <FontAwesomeIcon icon="fa-solid fa-film" className="fs-1 text-white text-center"/>
+                                    {/* <FontAwesomeIcon icon="fa-solid fa-film" className="fs-1 text-white text-center"/> */}
+                                    {/*<img src="../assets/images/logo.png" alt="Vietsubmoi" width="80" height="40" />*/}
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2798/2798007.png" alt="Vietsubmoi" width="60" height="60" className="my-auto"/>
                                 </Link>
                             </div>
                             <div className="header-search-form col-4">
-                                <form method="GET" id="form-search-movie">
+                                <form method="GET" id="form-search-movie" className="my-auto">
                                     <input
                                         className="search-box w-100"
                                         type="text"

@@ -9,8 +9,8 @@ function BaseFooter() {
                     <div className="row">
                         <div className="col-4">
                             <a aria-current="page" className="navbar-brand" href="/" title="Vietsub | Phim Hay | Xem Phim HD Online Vietsub Miễn Phí">
-                                {/* <img src="https://vietsubmoi.online/_ipx/f_webp/image/logo.png" alt="Bootstrap" width="120" height="60" /> */}
-                                <FontAwesomeIcon icon="fa-solid fa-film" className="fs-1 text-white text-center"/>
+                                 <img src="https://cdn-icons-png.flaticon.com/512/2798/2798007.png" alt="Bootstrap" width="120" height="120" /> 
+                                {/*<FontAwesomeIcon icon="fa-solid fa-film" className="fs-1 text-white text-center"/>*/}
                             </a>
                             <p className="my-2">
                                 VietSubMoi - Trang xem phim Online với giao diện mới được bố trí và thiết kế thân thiện với người dùng. Nguồn phim
